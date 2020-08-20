@@ -1,0 +1,117 @@
+FFFFFFFFFF..FF
+
+Failures:
+
+  1) HSLuv snapshot should convert #000000 from rgb to xyz
+     Failure/Error: deviation(HSLuv.rgb_to_xyz(test_rgb), test_xyz).should eq true
+
+       Expected: true
+            got: nil
+
+     # spec/hsluv-crystal_spec.cr:42
+
+  2) HSLuv snapshot should convert #000000 from xyz to luv
+     Failure/Error: deviation(HSLuv.xyz_to_luv(test_xyz), test_luv).should eq true
+
+       Expected: true
+            got: nil
+
+     # spec/hsluv-crystal_spec.cr:46
+
+  3) HSLuv snapshot should convert #000000 from luv to lch
+     Failure/Error: deviation(HSLuv.luv_to_lch(test_luv), test_lch).should eq true
+
+       Expected: true
+            got: nil
+
+     # spec/hsluv-crystal_spec.cr:50
+
+  4) HSLuv snapshot should convert #000000 from lch to hsluv
+     Failure/Error: deviation(HSLuv.lch_to_hsluv(test_lch), test_hsluv).should eq true
+
+       Expected: true
+            got: nil
+
+     # spec/hsluv-crystal_spec.cr:54
+
+  5) HSLuv snapshot should convert #000000 from lch to hpluv
+     Failure/Error: deviation(HSLuv.lch_to_hpluv(test_lch), test_hpluv).should eq true
+
+       Expected: true
+            got: nil
+
+     # spec/hsluv-crystal_spec.cr:58
+
+  6) HSLuv snapshot should convert #000000 from hpluv to lch
+     Failure/Error: deviation(HSLuv.hpluv_to_lch(test_hpluv), test_lch).should eq true
+
+       Expected: true
+            got: nil
+
+     # spec/hsluv-crystal_spec.cr:63
+
+  7) HSLuv snapshot should convert #000000 from hsluv to lch
+     Failure/Error: deviation(HSLuv.hsluv_to_lch(test_hsluv), test_lch).should eq true
+
+       Expected: true
+            got: nil
+
+     # spec/hsluv-crystal_spec.cr:67
+
+  8) HSLuv snapshot should convert #000000 from lch to luv
+     Failure/Error: deviation(HSLuv.lch_to_luv(test_lch), test_luv).should eq true
+
+       Expected: true
+            got: nil
+
+     # spec/hsluv-crystal_spec.cr:71
+
+  9) HSLuv snapshot should convert #000000 from luv to xyz
+     Failure/Error: deviation(HSLuv.luv_to_xyz(test_luv), test_xyz).should eq true
+
+       Expected: true
+            got: nil
+
+     # spec/hsluv-crystal_spec.cr:75
+
+ 10) HSLuv snapshot should convert #000000 from xyz to rgb
+     Failure/Error: deviation(HSLuv.xyz_to_rgb(test_xyz), test_rgb).should eq true
+
+       Expected: true
+            got: nil
+
+     # spec/hsluv-crystal_spec.cr:79
+
+ 11) HSLuv snapshot should convert #000000 from hex to hsluv
+     Failure/Error: deviation(HSLuv.hex_to_hsluv(hex), test_hsluv).should eq true
+
+       Expected: true
+            got: nil
+
+     # spec/hsluv-crystal_spec.cr:94
+
+ 12) HSLuv snapshot should convert #000000 from hex to hpluv
+     Failure/Error: deviation(HSLuv.hex_to_hpluv(hex), test_hpluv).should eq true
+
+       Expected: true
+            got: nil
+
+     # spec/hsluv-crystal_spec.cr:98
+
+Finished in 127.86 milliseconds
+14 examples, 12 failures, 0 errors, 0 pending
+
+Failed examples:
+
+crystal spec spec/hsluv-crystal_spec.cr:41 # HSLuv snapshot should convert #000000 from rgb to xyz
+crystal spec spec/hsluv-crystal_spec.cr:45 # HSLuv snapshot should convert #000000 from xyz to luv
+crystal spec spec/hsluv-crystal_spec.cr:49 # HSLuv snapshot should convert #000000 from luv to lch
+crystal spec spec/hsluv-crystal_spec.cr:53 # HSLuv snapshot should convert #000000 from lch to hsluv
+crystal spec spec/hsluv-crystal_spec.cr:57 # HSLuv snapshot should convert #000000 from lch to hpluv
+crystal spec spec/hsluv-crystal_spec.cr:62 # HSLuv snapshot should convert #000000 from hpluv to lch
+crystal spec spec/hsluv-crystal_spec.cr:66 # HSLuv snapshot should convert #000000 from hsluv to lch
+crystal spec spec/hsluv-crystal_spec.cr:70 # HSLuv snapshot should convert #000000 from lch to luv
+crystal spec spec/hsluv-crystal_spec.cr:74 # HSLuv snapshot should convert #000000 from luv to xyz
+crystal spec spec/hsluv-crystal_spec.cr:78 # HSLuv snapshot should convert #000000 from xyz to rgb
+crystal spec spec/hsluv-crystal_spec.cr:93 # HSLuv snapshot should convert #000000 from hex to hsluv
+crystal spec spec/hsluv-crystal_spec.cr:97 # HSLuv snapshot should convert #000000 from hex to hpluv

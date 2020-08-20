@@ -1,0 +1,9 @@
+name: hsluv-crystal
+version: 0.1.0
+
+authors:
+  - Seth Hinz <shinz@alumni.ubc.ca>
+
+crystal: 0.35.1
+
+license: MIT
