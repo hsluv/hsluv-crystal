@@ -18,16 +18,16 @@ crystal. Adapted from [hsluv-ruby](https://github.com/hsluv/hsluv-ruby).
 
 ## Usage
 
+#### Including the library
 ```crystal
 require "hsluv"
 ```
 
-## Usage
-
+#### Parameter ranges
 - `hue` is a Float64 between 0 and 360
 - `saturation` is a Float64 between 0 and 100
 - `lightness` is a Float64 between 0 and 100
-- `hex` is the hexadecimal format of the color
+- `hex` is the hexadecimal string representation of a color in "#rrggbb" format
 - `red` is a Float64 between 0 and 1
 - `green` is a Float64 between 0 and 1
 - `blue` is a Float64 between 0 and 1
