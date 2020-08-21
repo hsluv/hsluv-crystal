@@ -132,10 +132,15 @@ module HSLuv
 
   def luv_to_lch (arr) : FloatVec
     l, u, v = arr
-    c = ((u ** 2) + (v ** 2)) ** (1 / 2.0)
-    hrad = Math.atan2(v, u)
-    h = hrad * 180 / Math::PI
-    h += 360.0 if h < 0.0
+    c = Math.hypot(u, v)
+
+    if c < 1e-8
+      h = 0f64
+    else
+      hrad = Math.atan2(v, u)
+      h = hrad * 180 / Math::PI
+      h += 360.0 if h < 0.0
+    end
 
     FloatVec[l, c, h]
   end
@@ -153,7 +158,7 @@ module HSLuv
 
   def lch_to_hpluv (arr) : FloatVec
     l, c, h = arr
-
+    
     return FloatVec [h, 0.0, 100.0] if l > 99.9999999
     return FloatVec [h, 0.0, 0.0] if l < 0.00000001
 
@@ -266,34 +271,34 @@ module HSLuv
     ret
   end
 
-  def length_of_ray_until_intersect (theta, line) Float64
+  def length_of_ray_until_intersect (theta, line)
     m1, b1 = line
     length = b1 / (Math.sin(theta) - m1 * Math.cos(theta))
     return nil if length < 0
     length
   end
 
-  def intersect_line_line (line1, line2)
+  def intersect_line_line (line1, line2) : Float64
     (line1[1] - line2[1]) / (line2[0] - line1[0])
   end
 
-  def distance_from_pole (point)
+  def distance_from_pole (point) : Float64
     Math.sqrt(point[0] ** 2 + point[1] ** 2)
   end
 
-  def f (t)
+  def f (t) : Float64
     t > EPSILON ? 116 * ((t / REF_Y) ** (1.0 / 3.0)) - 16.0 : t / REF_Y * KAPPA
   end
 
-  def f_inv (t)
+  def f_inv (t) : Float64
     t > 8 ? REF_Y * ((t + 16.0) / 116.0) ** 3.0 : REF_Y * t / KAPPA
   end
 
-  def to_linear (c)
+  def to_linear (c) : Float64
     c > 0.04045 ? ((c + 0.055) / 1.055) ** 2.4 : c / 12.92
   end
 
-  def from_linear (c)
+  def from_linear (c) : Float64
     c <= 0.0031308 ? 12.92 * c : (1.055 * (c ** (1.0 / 2.4)) - 0.055)
   end
 

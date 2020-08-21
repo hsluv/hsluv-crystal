@@ -23,9 +23,10 @@ end
 
 describe HSLuv do
   describe "snapshot" do
-    snapshot = JSON.parse(File.read("./spec/snapshot-rev3.json"))
+    snapshot = JSON.parse(File.read("./spec/snapshot-rev4.json"))
 
     snapshot.as_h.each do |hex, values|
+      # next unless ["#111111"].includes? hex
       test_rgb = unwrap_sample values["rgb"]
       test_xyz = unwrap_sample values["xyz"]
       test_luv = unwrap_sample values["luv"]
