@@ -1,4 +1,5 @@
 # hsluv-crystal
+[![Build Status](https://travis-ci.org/shinzlet/hsluv-crystal.svg?branch=master)](https://travis-ci.org/shinzlet/hsluv-crystal)
 
 An implementation of the HSLuv colorspace written in crystal. Adapted 
 from [hsluv-ruby](https://github.com/hsluv/hsluv-ruby).
