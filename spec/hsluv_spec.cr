@@ -6,7 +6,7 @@ require "./spec_helper"
 def unwrap_sample(node : JSON::Any) : StaticArray(Float64, 3)
   arr = node.as_a
 
-  StaticArray[0, 0, 0].map_with_index do |_, idx|
+  StaticArray(Float64, 3).new do |idx|
     el = arr[idx]
     (el.as_f? || el.as_i? || el.as_f32).to_f64
   end
@@ -33,7 +33,6 @@ describe HSLuv do
       test_lch = unwrap_sample values["lch"]
       test_hsluv = unwrap_sample values["hsluv"]
       test_hpluv = unwrap_sample values["hpluv"]
-
 
       context "should convert #{hex}" do
         # Forward
@@ -98,7 +97,6 @@ describe HSLuv do
           deviation(HSLuv.hex_to_hpluv(hex), test_hpluv).should eq true
         end
       end
-
     end
   end
 end
