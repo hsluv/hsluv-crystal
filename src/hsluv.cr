@@ -28,13 +28,13 @@ module HSLuv
   ###
 
   # Converts an HSLuv color to a hexadecimal string.
-  def hsluv_to_hex (h, s, l) : String
+  def hsluv_to_hex (h : Float64, s : Float64, l : Float64) : String
     r, g, b = hsluv_to_rgb(h, s, l)
     rgb_to_hex(r, g, b)
   end
 
   # Converts an HPLuv color to a hexadecimal string.
-  def hpluv_to_hex (h, s, l) : String
+  def hpluv_to_hex (h : Float64, s : Float64, l : Float64) : String
     r, g, b = hpluv_to_rgb(h, s, l)
     rgb_to_hex(r, g, b)
   end
@@ -52,39 +52,39 @@ module HSLuv
   end
 
   # Converts an HSLuv color to an rgb array.
-  def hsluv_to_rgb (h, s, l) : FloatVec
+  def hsluv_to_rgb (h : Float64, s : Float64, l : Float64) : FloatVec
     xyz_to_rgb(luv_to_xyz(lch_to_luv(hsluv_to_lch([h, s, l]))))
   end
 
   # Converts an rgb color to an HSLuv hsl array.
-  def rgb_to_hsluv (r, g, b) : FloatVec
+  def rgb_to_hsluv (r : Float64, g : Float64, b : Float64) : FloatVec
     lch_to_hsluv(rgb_to_lch(r, g, b))
   end
 
   # Converts an HPLuv hsl color to an rgb array.
-  def hpluv_to_rgb (h, s, l) : FloatVec
+  def hpluv_to_rgb (h : Float64, s : Float64, l : Float64) : FloatVec
     l, c, h = hpluv_to_lch([h, s, l])
     lch_to_rgb(l, c, h)
   end
 
   # Converts an rgb color to an HPLuv hsl array.
-  def rgb_to_hpluv (r, g, b) : FloatVec
+  def rgb_to_hpluv (r : Float64, g : Float64, b : Float64) : FloatVec
     lch_to_hpluv(rgb_to_lch(r, g, b))
   end
 
   # Converts an LCh color to an rgb array.
-  def lch_to_rgb (l, c, h) : FloatVec
+  def lch_to_rgb (l : Float64, c : Float64, h : Float64) : FloatVec
     xyz_to_rgb(luv_to_xyz(lch_to_luv(FloatVec [l, c, h])))
   end
 
   # Converts an rgb color to an LCh array.
-  def rgb_to_lch (r, g, b) : FloatVec
+  def rgb_to_lch (r : Float64, g : Float64, b : Float64) : FloatVec
     luv_to_lch(xyz_to_luv(rgb_to_xyz(FloatVec [r, g, b])))
   end
 
   # Converts an rgb color to a hex color code - e.g.
   # rgb_to_hex(0xff, 0xaa, 0x88) == "#ffaa88"
-  def rgb_to_hex (r, g, b) : String
+  def rgb_to_hex (r : Float64, g : Float64, b : Float64) : String
     "#%02x%02x%02x" % rgb_prepare(FloatVec [r, g, b]).to_a
   end
 
