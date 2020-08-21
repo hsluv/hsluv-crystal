@@ -1,5 +1,3 @@
-require "./hsluv-crystal"
-
 # Single use type aliases for a 3x1 vector and a 3x3 matrix.
 alias FloatVec = StaticArray(Float64, 3)
 alias Matrix = StaticArray(FloatVec, 3)
