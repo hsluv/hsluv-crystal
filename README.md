@@ -1,5 +1,5 @@
 # hsluv-crystal
-[![Build Status](https://travis-ci.org/shinzlet/hsluv-crystal.svg?branch=master)](https://travis-ci.org/shinzlet/hsluv-crystal)
+[![Build Status](https://travis-ci.org/hsluv/hsluv-crystal.svg?branch=master)](https://travis-ci.org/hsluv/hsluv-crystal)
 
 An implementation of the [HSLuv](https://www.hsluv.org/) colorspace written in
 crystal. Adapted from [hsluv-ruby](https://github.com/hsluv/hsluv-ruby).
@@ -11,7 +11,7 @@ crystal. Adapted from [hsluv-ruby](https://github.com/hsluv/hsluv-ruby).
    ```yaml
    dependencies:
      hsluv:
-       github: shinzlet/hsluv-crystal
+       github: hsluv/hsluv-crystal
    ```
 
 2. Run `shards install`
