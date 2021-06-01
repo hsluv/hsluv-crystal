@@ -2,8 +2,8 @@ name: hsluv
 version: 0.1.0
 
 authors:
-  - Seth Hinz <shinz@alumni.ubc.ca>
+  - Seth Hinz <sethhinz@me.com>
 
-crystal: 0.35.1
+crystal: ">= 0.35.1"
 
 license: MIT
