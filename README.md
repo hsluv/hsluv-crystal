@@ -1,5 +1,5 @@
 # hsluv-crystal
-[![Build Status](https://travis-ci.org/hsluv/hsluv-crystal.svg?branch=master)](https://travis-ci.org/hsluv/hsluv-crystal)
+[![Crystal CI](https://github.com/hsluv/hsluv-crystal/actions/workflows/crystal.yml/badge.svg)](https://github.com/hsluv/hsluv-crystal/actions/workflows/crystal.yml)
 
 An implementation of the [HSLuv](https://www.hsluv.org/) colorspace written in
 crystal. Adapted from [hsluv-ruby](https://github.com/hsluv/hsluv-ruby).
